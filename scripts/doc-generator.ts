@@ -1,4 +1,4 @@
-import * as tsdoc from '@microsoft/api-extractor-model/node_modules/@microsoft/tsdoc';
+import * as tsdoc from '@microsoft/tsdoc';
 import DEBUG from 'debug';
 import findRoot from 'find-root';
 import fs from 'fs';
@@ -124,7 +124,7 @@ function getDoc(docString: string) {
   const parserContext = parser.parseString(docString);
   const docComment = parserContext.docComment;
   const summary = reduceNode(docComment.summarySection);
-  const example = docComment.customBlocks.find(b => b.blockTag!.tagName === '@example');
+  const example = docComment.customBlocks.find((b: any) => b.blockTag!.tagName === '@example');
   const result = {
     summary,
     example: example ? reduceNode(example.content) : '',

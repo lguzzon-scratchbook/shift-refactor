@@ -268,7 +268,6 @@ export type SimpleIdentifier = BindingIdentifier | IdentifierExpression | Assign
 // @public
 export type SimpleIdentifierOwner = AssignmentExpression | ClassDeclaration | ClassExpression | FunctionDeclaration | FunctionExpression | VariableDeclarator;
 
-
 // (No @packageDocumentation comment for this package)
 
 ```
