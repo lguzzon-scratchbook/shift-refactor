@@ -70,7 +70,8 @@
     "extract-api": "ts-node scripts/api-extractor.ts",
     "docrunner": "ts-node -O '{\"resolveJsonModule\":true}' test/docrunner/examples.ts",
     "test-examples": "npm run extract-api && npm run docrunner",
-    "test": "mocha"
+    "test": "mocha",
+    "test:all":"( (npm run build-all) && (npm run test) )"
   },
   "author": "Jarrod Overson",
   "license": "Apache-2.0"
