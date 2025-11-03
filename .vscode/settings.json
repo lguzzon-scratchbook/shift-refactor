@@ -1,4 +1,9 @@
 {
+  "debug.javascript.usePreview": false,
+  "mochaExplorer.debuggerConfig": "Debug Mocha Tests",
+  "mochaExplorer.files": "test/**/*.test.ts",
+  "mochaExplorer.require": "ts-node/register",
+  "peacock.color": "#1f2e39",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#31495a",
     "activityBar.activeBorder": "#150b11",
@@ -16,10 +21,5 @@
     "titleBar.border": "#1f2e39",
     "titleBar.inactiveBackground": "#1f2e3999",
     "titleBar.inactiveForeground": "#e7e7e799"
-  },
-  "mochaExplorer.files": "test/**/*.test.ts",
-  "mochaExplorer.require": "ts-node/register",
-  "mochaExplorer.debuggerConfig": "Debug Mocha Tests",
-  "peacock.color": "#1f2e39",
-  "debug.javascript.usePreview": false
+  }
 }
