@@ -36,7 +36,7 @@ describe('RefactorSession', () => {
       expect(refactor.first()).to.deep.equal(parse('foo();'));
     });
   });
-  describe('insert', function() {
+  describe('insert', function () {
     describe('prepend', () => {
       it('should insert statement before', () => {
         let ast = parse(`function foo(){}\nfoo();`);
@@ -91,7 +91,7 @@ describe('RefactorSession', () => {
       });
     });
   });
-  describe('rename', function() {
+  describe('rename', function () {
     it('rename function declarations', () => {
       let ast = parse(`function foo(){}\nfoo();`);
       const refactor = new RefactorSession(ast);
@@ -176,7 +176,7 @@ describe('RefactorSession', () => {
     });
   });
 
-  describe('replace', function() {
+  describe('replace', function () {
     it('should replace statements', () => {
       let ast = parse(`function foo(){}\nfoo();`);
       const refactor = new RefactorSession(ast);
@@ -240,7 +240,7 @@ describe('RefactorSession', () => {
     });
   });
 
-  describe('replaceRecursive', function() {
+  describe('replaceRecursive', function () {
     it('should replace until the query is empty', () => {
       let ast = parse(`a["b"]["c"]`);
       const refactor = new RefactorSession(ast);
@@ -354,7 +354,7 @@ describe('RefactorSession', () => {
       expect(decls.length).to.equal(2);
     });
   });
-  describe('lookupVariableByName', function() {
+  describe('lookupVariableByName', function () {
     it('should return variables by name', () => {
       let ast = parse(`var a = 2; var b = 3; (function(b){ var a = "foo" }())`);
       const refactor = new RefactorSession(ast);

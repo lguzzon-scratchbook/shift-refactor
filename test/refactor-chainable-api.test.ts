@@ -32,9 +32,7 @@ describe('chainable interface', () => {
   it('should support chaining across methods that return nodes', () => {
     const src = `b(1);`;
     const $script = refactor(src);
-    $script('CallExpression')
-      .closest(':statement')
-      .prepend(`a()`);
+    $script('CallExpression').closest(':statement').prepend(`a()`);
 
     expect($script.root).to.deep.equal(parse(`a();b(1);`));
   });
@@ -80,19 +78,12 @@ describe('chainable interface', () => {
   it('statements should also get .body.statements', () => {
     const src = `try { var foo = 1; } catch(e){}`;
     const $s = refactor(src);
-    const innerStatements = $s(
-      $s
-        .statements()
-        .first('TryCatchStatement')
-        .raw(),
-    ).statements();
+    const innerStatements = $s($s.statements().first('TryCatchStatement').raw()).statements();
     expect(innerStatements.length).to.equal(1);
     expect(innerStatements.raw().type).to.equal('VariableDeclarationStatement');
-    expect(
-      refactor(`!(function(){foo();}())`)('FunctionExpression')
-        .statements()
-        .raw().type,
-    ).to.equal('ExpressionStatement');
+    expect(refactor(`!(function(){foo();}())`)('FunctionExpression').statements().raw().type).to.equal(
+      'ExpressionStatement',
+    );
   });
 
   describe('methods w/o arguments', () => {

@@ -3,7 +3,7 @@ import {StaticMemberExpression} from 'shift-ast';
 import {parseScript as parse} from 'shift-parser';
 import * as util from '../src/misc/util';
 
-describe('util', function() {
+describe('util', function () {
   it('isDeepSimilar', () => {
     let generic = parse(`foo.bar()`);
     let specific = parse(`foo.bar(1,2,3)`);

@@ -88,7 +88,7 @@ export class RefactorSessionChainable {
     const chainable = new Klass(session);
     const prototype = Object.getPrototypeOf(chainable);
 
-    const $query = function(selector: RefactorQueryInput): RefactorQueryAPI {
+    const $query = function (selector: RefactorQueryInput): RefactorQueryAPI {
       const subSession = session.subSession(selector);
       return Klass.create(subSession);
     };

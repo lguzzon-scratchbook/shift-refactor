@@ -5,7 +5,7 @@ import {query} from '../src/misc/query';
 
 const trees: Node[] = [parseScript('a = 1;'), parseScript('b = 2;'), parseScript('c(a);'), parseScript('d(b);')];
 
-describe('query', function() {
+describe('query', function () {
   it('should take in 1 node and 1 query', () => {
     const nodes = query(trees[0], 'ExpressionStatement');
     expect(nodes.length).to.equal(1);

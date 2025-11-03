@@ -182,7 +182,7 @@ export class GlobalState {
     if (!this.isDirty()) return this;
     const _this = this;
     const result = traverser.replace(this.root, {
-      leave: function(node: Node, parent: Node) {
+      leave: function (node: Node, parent: Node) {
         if (node.type === 'VariableDeclarationStatement') {
           if (node.declaration.declarators.length === 0) return this.remove();
         }

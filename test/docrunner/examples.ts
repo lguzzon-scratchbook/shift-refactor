@@ -172,7 +172,7 @@ function extractCodeOnlyBlock(tsdoc: string, type = '@assert') {
 
 function makeSpy(fn: Function) {
   const spy: Function & {called: boolean; orig: typeof fn} = Object.assign(
-    function(this: any, ...args: any[]) {
+    function (this: any, ...args: any[]) {
       spy.called = true;
       return fn.apply(this, args);
     },
